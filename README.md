@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the codebase of D&D's Snacks LLC's online store. This project is a demonstration of our online shop, which mirrors our Shopify website's functionality. As a part-owner of this retail store, this project holds immense significance. We've chosen to use modern web development practices and tools to showcase our dedication to quality, both in our products and our online presence.
+Welcome to the codebase of D&D's Snacks LLC's online store. This project is a demonstration of my online shop, which mirrors my Shopify website's functionality. As a part-owner of this retail store, this project holds immense significance. I've chosen to use modern web development practices and tools to showcase my dedication to quality, both in our products and our online presence.
 
 ## Tech Stack
 
@@ -26,7 +26,7 @@ Welcome to the codebase of D&D's Snacks LLC's online store. This project is a de
 
 ## Future Modifications
 
-While this is a demo version, we have big plans for the future:
+While this is a demo version, I have big plans for the future:
 
 1. **User Authentication**: For a personalized shopping experience.
 2. **Payment Gateway Integration**: To facilitate online payments.
@@ -35,7 +35,7 @@ While this is a demo version, we have big plans for the future:
 
 ## Conclusion
 
-This project aims to demonstrate our commitment to using technology to enhance our customer's shopping experience at D&D's Snacks LLC. We value quality, dedication, and innovation. We hope potential employers see the effort and skill set that has been poured into this project. Stay tuned for more updates, and thank you for checking out our project!
+This project aims to demonstrate my commitment to using technology to enhance my customer's shopping experience at D&D's Snacks LLC. I value quality, dedication, and innovation. I hope potential employers see the effort and skill set that has been poured into this project. Stay tuned for more updates, and thank you for checking out my project!
 
 ---
 
