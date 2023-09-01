@@ -12,6 +12,9 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
+            <Route path="/signin" element={""}></Route>
+            <Route path="/signup" element={""}></Route>
+            <Route path="/signout" element={""}></Route>
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
@@ -22,3 +25,4 @@ export default function App() {
 }
 
 // <></> : React Fragment tags. Allows you to display multiline without no effect in the dom.
+// All "Routes" exists inside of the "Router".
