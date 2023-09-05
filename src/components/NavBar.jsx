@@ -12,15 +12,15 @@ const NavBar = () => {
           <img src={logo} alt="Company Logo" className="logo" />
         </Link>
         <div className="link-group">
+          <Link to="/signin">
+            <SignIn size={32} />
+          </Link>
+          <Link to="/">
+            <SignOut size={32} />
+          </Link>
           <Link to="/">Shop</Link>
           <Link to="/cart">
             <ShoppingCartSimple size={32} />
-          </Link>
-          <Link to="">
-            <SignIn size={32} />
-          </Link>
-          <Link to="">
-            <SignOut size={32} />
           </Link>
         </div>
       </div>

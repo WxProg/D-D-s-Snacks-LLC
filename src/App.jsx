@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Shop from "./pages/shop/shop";
 import Cart from "./pages/cart/cart";
+import SignIn from "./pages/signin/SignIn";
+import SignUp from "./pages/signup/SignUp";
 import ShopContextProvider from "./context/shop-context";
 
 export default function App() {
@@ -12,8 +14,8 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/signin" element={""}></Route>
-            <Route path="/signup" element={""}></Route>
+            <Route path="/signin" element={<SignIn />}></Route>
+            <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/signout" element={""}></Route>
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
