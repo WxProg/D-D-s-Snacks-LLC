@@ -1,0 +1,88 @@
+/* ======================
+   SignIn Page styles
+   ====================== */
+
+/* General layout for the sign-in page */
+.signin-layout {
+  width: 100vw;
+  min-height: 100vh; /* ensure your background still fills the screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* align the form towards the top */
+  padding-top: 15vh; /* adjust this to push the form a bit down from the top */
+  background-color: #f2f2f2;
+}
+
+.signin-layout h1 {
+  font-size: 1.8rem;
+  color: rgb(19, 19, 19);
+  margin-bottom: 30px;
+}
+
+/* Style for the form */
+.signin-form {
+  width: 300px; /* Fixed width for the form */
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-form input {
+  padding: 10px; /* Padding inside each input field */
+  margin-bottom: 10px; /* Space between each input field */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signin-form button {
+  padding: 10px 15px;
+  background-color: rgb(0, 128, 0);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.signin-form button:hover {
+  opacity: 0.7;
+}
+
+/* Styles for the signup option below the form */
+.signup-option {
+  margin-top: 15px; /* add some space above this section */
+  font-size: 0.95rem; /* making the font a bit smaller than default */
+}
+
+.signup-option a {
+  color: rgb(0, 128, 0); /* using the green color from the button */
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.signup-option a:hover {
+  opacity: 0.7;
+}
+
+/* Style for the registration success message */
+.registeredSuccessfully {
+  padding: 10px 15px; /* Padding to make it visually pleasant */
+  background-color: rgb(
+    0,
+    128,
+    0
+  ); /* Using the green color similar to the button */
+  color: yellow; /* Text color to contrast with the green background */
+  border-radius: 5px; /* Rounded corners like the other elements */
+  font-size: 1rem; /* Font size, can be adjusted to your preference */
+  font-weight: bold; /* Make it bold to stand out */
+  margin-bottom: 20px; /* Space below the message to separate it from other elements */
+  text-align: center; /* Center the text inside */
+  transition: opacity 0.3s; /* Smooth transition for any hover or other effects */
+}
+
+.registeredSuccessfully:hover {
+  opacity: 0.9; /* A slight change in opacity on hover to indicate interactivity */
+}

@@ -14,9 +14,9 @@ export default function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/signin" element={<SignIn />}></Route>
-            <Route path="/signup" element={<SignUp />}></Route>
-            <Route path="/signout" element={""}></Route>
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/signout" element={""} />
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>

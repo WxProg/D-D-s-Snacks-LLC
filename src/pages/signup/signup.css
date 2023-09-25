@@ -53,3 +53,24 @@
 .signup-form button:hover {
   opacity: 0.7; /* Hover effect to make the button interactive */
 }
+
+.error-message {
+  color: #d32f2f; /* red color for error text */
+  font-size: 0.8rem; /* slightly smaller text */
+  margin-top: 0.2rem; /* space above the error */
+  margin-bottom: 0.5rem; /* space below the error */
+  display: block; /* ensures it's always on its own line */
+  font-weight: bold; /* makes text bold */
+  font-style: italic;
+  text-align: center;
+}
+
+.signInLink {
+  color: rgb(0, 128, 0);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.signInLink:hover {
+  opacity: 0.7;
+}
