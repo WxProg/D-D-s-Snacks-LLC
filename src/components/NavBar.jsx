@@ -1,10 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { ShoppingCartSimple, SignIn, SignOut } from "phosphor-react"; // icons library
 import "./NavBar.css";
 import logo from "../assets/dds-logo.png";
 
 const NavBar = () => {
+  const [loginUserName, setLoginUserName] = useState("");
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/signout") {
+      setLoginUserName("");
+    } else if (location.state?.fName) {
+      setLoginUserName(location.state?.fName);
+    }
+  }, [location.pathname, location.state]);
+
   return (
     <div className="main-container">
       <div className="main-navbar">
@@ -12,12 +24,19 @@ const NavBar = () => {
           <img src={logo} alt="Company Logo" className="logo" />
         </Link>
         <div className="link-group">
-          <Link to="/signin">
-            <SignIn size={32} />
-          </Link>
-          <Link to="/">
-            <SignOut size={32} />
-          </Link>
+          {loginUserName ? (
+            <>
+              <span className="username-display">Welcome, {loginUserName}</span>
+              <Link to="/signout">
+                <SignOut size={32} />
+              </Link>
+            </>
+          ) : (
+            <Link to="/signin">
+              <SignIn size={32} />
+            </Link>
+          )}
+
           <Link to="/">Shop</Link>
           <Link to="/cart">
             <ShoppingCartSimple size={32} />

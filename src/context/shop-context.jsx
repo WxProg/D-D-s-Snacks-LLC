@@ -13,18 +13,36 @@ const getDefaultCart = () => {
 };
 
 const ShopContextProvider = (props) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const loginUser = () => {
+    setIsAuthenticated(true);
+  };
+
+  const logoutUser = () => {
+    setIsAuthenticated(false);
+  };
+
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   const getTotalCartAmount = () => {
-    let totalAmount = 0;
+    let subTotalAmount = 0;
+    let taxAmount = 0;
 
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-        totalAmount += cartItems[item] * itemInfo.price;
+        const itemTotal = cartItems[item] * itemInfo.price;
+        subTotalAmount = itemTotal;
+        taxAmount += itemTotal * itemInfo.tax;
       }
     }
-    return totalAmount;
+    const totalAmount = subTotalAmount + taxAmount;
+    return {
+      subTotal: subTotalAmount,
+      tax: taxAmount,
+      total: totalAmount,
+    };
   };
   const addToCart = (itemId) => {
     setCartItems((prevItem) => ({
@@ -47,7 +65,11 @@ const ShopContextProvider = (props) => {
     setCartItems((prevItem) => ({ ...prevItem, [itemId]: newAmount }));
   };
 
+  // States and functions are added to the context value so that they can be used in any component.
   const contextValue = {
+    isAuthenticated,
+    loginUser,
+    logoutUser,
     cartItems,
     addToCart,
     removeFromCart,

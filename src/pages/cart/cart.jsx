@@ -1,36 +1,55 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PRODUCTS from "../../products";
 import { ShopContext } from "../../context/shop-context";
 import CartItem from "./CartItem";
+import "./cart.css";
 
 const Cart = () => {
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const { cartItems, getTotalCartAmount, isAuthenticated } =
+    useContext(ShopContext);
 
-  const totalAmount = getTotalCartAmount();
+  const { subTotal, tax, total } = getTotalCartAmount();
 
-  const navigate = useNavigate(); // Allows use to navigate a different part of our app.
-  // It is implemented below when the use clicks the "Continue Shopping" button.
+  const navigate = useNavigate();
+
+  if (!isAuthenticated) {
+    return (
+      <div className="not-authenticated">
+        <h1>Your Cart is empty</h1>
+        <Link className="" to="/signin">
+          Sign in to your account
+        </Link>
+        <Link className="" to="/signup">
+          Sign up now
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="cart">
       <div>
         <h1>Your Cart Items</h1>
       </div>
       <div className="cartItems">
-        {PRODUCTS.map((product) =>
-          cartItems[product.id] !== 0 ? <CartItem data={product} /> : null
+        {PRODUCTS.map((product, index) =>
+          cartItems[product.id] !== 0 ? (
+            <CartItem key={index} data={product} />
+          ) : null
         )}
       </div>
-      {totalAmount > 0 ? (
+      {subTotal > 0 ? (
         <div className="checkout">
-          <p>Taxes:$</p>
+          <p>Subtotal:${subTotal.toFixed(2)}</p>
+          <p>Taxes:${tax.toFixed(2)}</p>
           <p>Shipping:$</p>
-          <p>Subtotal:${totalAmount.toFixed(2)}</p>
+          <p>Total:${total.toFixed(2)}</p>
           <button onClick={() => navigate("/")}>Continue Shopping</button>
           <button>Checkout</button>
         </div>
       ) : (
-        <h2>Nothing nuh deh yah. Guh shopping!</h2>
+        <h2>Nothing nuh deh yah. Gwann guh shop!</h2>
       )}
     </div>
   );

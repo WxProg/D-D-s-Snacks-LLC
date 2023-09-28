@@ -46,28 +46,15 @@ const SignUp = () => {
     event.preventDefault();
 
     // Reset errors before making a request
-    // setErrors({});
+    setErrors({});
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/users/signup",
-        userCredentials
-      );
-      console.log("Response from server:", response.data);
-      console.log("It connected successfully.");
-
+      await axios.post("http://localhost:5000/users/signup", userCredentials);
       navigate("/signin", { state: { registered: true } });
     } catch (error) {
-      // console.log("Error submitting form:", error);
-      // if (error.response && error.response.data.message) {
-      //   alert(error.response.data.message);
-      // }
       const serverMessage = error.response.data.message;
       const errorField = mapServerMessageToErrorState(serverMessage);
 
-      // console.log(serverMessage);
-      // console.log(errorField);
-      // console.log(mapServerMessageToErrorState());
       if (errorField) {
         setErrors((prevState) => ({
           ...prevState,

@@ -5,6 +5,7 @@ import Shop from "./pages/shop/shop";
 import Cart from "./pages/cart/cart";
 import SignIn from "./pages/signin/SignIn";
 import SignUp from "./pages/signup/SignUp";
+import SignOut from "./pages/signout/SignOut";
 import ShopContextProvider from "./context/shop-context";
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/signout" element={""} />
+            <Route path="/signout" element={<SignOut />} />
             <Route path="/" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
